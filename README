@@ -1,1 +1,29 @@
-Can you solve the farnsworth paradox? Model two universes which are aware of each other. 
+The Farnsworth paradox - two modules referring to each other:
+
+DAVID-A-EDELHARTs-MacBook-Pro:farnsworth bingomanatee$ node index.js 
+looking for universe  universeA
+/Users/bingomanatee/Documents/node/farnsworth/node_modules/universes.js : returning universe  universeA :  
+/Users/bingomanatee/Documents/node/farnsworth/index.js : person  fry , name:  fry of A
+/Users/bingomanatee/Documents/node/farnsworth/index.js : person  leela , name:  leela of A
+/Users/bingomanatee/Documents/node/farnsworth/index.js : person  professor , name:  professor of A
+/Users/bingomanatee/Documents/node/farnsworth/index.js ... they have  1  universes
+looking for universe  universeB
+/Users/bingomanatee/Documents/node/farnsworth/node_modules/universes.js : returning universe  universeB :  
+/Users/bingomanatee/Documents/node/farnsworth/index.js ... and here is  universeB : 
+{ name: 'B',
+  fry: { name: 'fry of B' },
+  leela: { name: 'leela of B' },
+  professor: { universes: [ 'universeA' ], name: 'professor of B' } }
+looking for universe  universeB
+/Users/bingomanatee/Documents/node/farnsworth/node_modules/universes.js : returning universe  universeB :  
+/Users/bingomanatee/Documents/node/farnsworth/index.js : person  fry , name:  fry of B
+/Users/bingomanatee/Documents/node/farnsworth/index.js : person  leela , name:  leela of B
+/Users/bingomanatee/Documents/node/farnsworth/index.js : person  professor , name:  professor of B
+/Users/bingomanatee/Documents/node/farnsworth/index.js ... they have  1  universes
+looking for universe  universeA
+/Users/bingomanatee/Documents/node/farnsworth/node_modules/universes.js : returning universe  universeA :  
+/Users/bingomanatee/Documents/node/farnsworth/index.js ... and here is  universeA : 
+{ name: 'A',
+  fry: { name: 'fry of A' },
+  leela: { name: 'leela of A' },
+  professor: { universes: [ 'universeB' ], name: 'professor of A' } }
