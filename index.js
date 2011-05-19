@@ -1,7 +1,12 @@
-var uA = require('universeA');
+var u = require('universes');
 
-uA(function(universeA) {
-    echo_universe(universeA);
+
+u('universeA', function(uA) {
+    uA(echo_universe);
+});
+
+u('universeB', function(uB){
+    uB(echo_universe);
 })
 
 function echo_universe(Universe) {
@@ -12,8 +17,11 @@ function echo_universe(Universe) {
             console.log(__filename, ": person ", person, ', name: ', p.name);
             if (p.hasOwnProperty('universes')) {
                 console.log(__filename, '... they have ', p.universes.length, ' universes');
-                p.universes.forEach(function(u) {
-                    console.log(__filename, ': universe ', u);
+                p.universes.forEach(function(uname) {
+                    u(uname, function(my_universe) {
+                        console.log(__filename, '... and here is ', uname, ': ');
+                        my_universe(console.log);
+                    });
                 })
             }
         }
